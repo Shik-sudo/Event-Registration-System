@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Event Registration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="navbar container">
+      <h1>EventHub</h1>
+      <a class="btn small" href="#register">Register Now</a>
+    </nav>
+
+    <div class="hero-content container">
+      <p class="tag">College Event Registration System</p>
+      <h2>Join, Learn, and Network at Campus Events</h2>
+      <p>
+        A simple and presentable web app for managing student event registrations.
+        Built using only HTML, CSS, and JavaScript.
+      </p>
+      <a class="btn" href="#events">Explore Events</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="events" class="container section">
+      <h3>Upcoming Events</h3>
+      <p class="section-text">Select one event while filling out the registration form.</p>
+
+      <div class="event-grid" id="eventGrid"></div>
+    </section>
+
+    <section id="register" class="container section register-section">
+      <div class="form-card">
+        <h3>Register for an Event</h3>
+
+        <form id="registrationForm" novalidate>
+          <div class="input-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+            <small class="error" id="nameError"></small>
+          </div>
+
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            <small class="error" id="emailError"></small>
+          </div>
+
+          <div class="input-row">
+            <div class="input-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" required />
+              <small class="error" id="phoneError"></small>
+            </div>
+
+            <div class="input-group">
+              <label for="year">Year</label>
+              <select id="year" name="year" required>
+                <option value="">Select year</option>
+                <option>1st Year</option>
+                <option>2nd Year</option>
+                <option>3rd Year</option>
+                <option>4th Year</option>
+              </select>
+              <small class="error" id="yearError"></small>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="event">Choose Event</label>
+            <select id="event" name="event" required></select>
+            <small class="error" id="eventError"></small>
+          </div>
+
+          <button class="btn" type="submit">Submit Registration</button>
+        </form>
+
+        <p class="success-message" id="successMessage" aria-live="polite"></p>
+      </div>
+
+      <aside class="list-card">
+        <h3>Recent Registrations</h3>
+        <ul id="registrationList" class="registration-list"></ul>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made for college mini project • EventHub</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
